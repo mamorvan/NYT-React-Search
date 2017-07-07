@@ -20,7 +20,7 @@ app.use(bodyParser.json({ type: "application/vnd.api+json"}));
 app.use(express.static("public"));
 
 //Database set-up
-mongoose.connect();
+mongoose.connect("mongodb://heroku_818vv9zb:9iarikss100ho3si74hgdmf388@ds151232.mlab.com:51232/heroku_818vv9zb");
 var db = mongoose.connection;
 
 db.on("error", function(err){
