@@ -10,12 +10,12 @@ var helper = {
         });
     },
 
-    getSaved: function() {
-        return axios.get("/api");
-    },
+    // getSaved: function() {
+    //     return axios.get("/api");
+    // },
 
-    postSaved: function(topic, date, url) {
-        return axios.post("/api", { topic: topic, date: date, url: url});
+    // postSaved: function(topic, date, url) {
+    //     return axios.post("/api", { topic: topic, date: date, url: url});
     }
 };
 

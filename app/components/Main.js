@@ -1,7 +1,8 @@
 var React = require("react");
 
 var Search = require("./children/Search");
-var Saved = require("./children/Saved");
+var Results = require("./children/Results");
+// var Saved = require("./children/Saved");
 
 var helpers = require("../utils/helpers");
 
@@ -23,13 +24,13 @@ var Main = React.createClass({
                 console.log("main.js 23 - helpers.runQuery data:", data);
                 this.setState({ results: data });
 
-                helpers.postSaved(data.topic, data.date, data.url).then(function(){
-                    console.log("main.js 27 - article saved");
-                    helpers.getSaved().then(function(response) {
-                        console.log("main.js 29 - helpers.getSaved on update - response: ", response);
-                        this.setState({ saved: response.data });
-                    }.bind(this)); //bind getSaved to Main component
-                }.bind(this)); // bind postSaved to Main component
+                // helpers.postSaved(data.topic, data.date, data.url).then(function(){
+                //     console.log("main.js 27 - article saved");
+                //     helpers.getSaved().then(function(response) {
+                //         console.log("main.js 29 - helpers.getSaved on update - response: ", response);
+                //         this.setState({ saved: response.data });
+                //     }.bind(this)); //bind getSaved to Main component
+                // }.bind(this)); // bind postSaved to Main component
             }
         }.bind(this)); //bind runQuery to Main component
     },
@@ -45,7 +46,7 @@ var Main = React.createClass({
                 <div className="row">
                     <div className="jumbotron">
                         <h1>New York Times React Search</h1>
-                        <h3><em>Search for and annotate articles</em></h3>
+                        <h3><em>Search for articles and that's it</em></h3>
                     </div>
                 </div>
             
@@ -57,11 +58,11 @@ var Main = React.createClass({
                     <Results results={this.state.results} />   
             </div>
 
-            <div className="row">
-                <div className="col-md-10 col-md-offset-1 well">
-                    <Saved saved={this.state.saved} />
-                </div>
-            </div>
+            // <div className="row">
+            //     <div className="col-md-10 col-md-offset-1 well">
+            //         <Saved saved={this.state.saved} />
+            //     </div>
+            // </div>
 
         </div>
 
