@@ -8,14 +8,6 @@ var helper = {
         return axios.get(queryURL).then(function(response) {
             console.log("helpers.js 7: NYT query response: ", response);
         });
-    },
-
-    // getSaved: function() {
-    //     return axios.get("/api");
-    // },
-
-    // postSaved: function(topic, date, url) {
-    //     return axios.post("/api", { topic: topic, date: date, url: url});
     }
 };
 
